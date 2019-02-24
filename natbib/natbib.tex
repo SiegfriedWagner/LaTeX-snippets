@@ -1,0 +1,34 @@
+\documentclass[a4paper, 12pt]{report}
+\usepackage{polski}
+\usepackage[T1]{fontenc} % rozszerzony zestaw znaków
+\usepackage[utf8]{inputenc} % wsparcie kodowanie unicode
+\usepackage[polish]{babel}
+\usepackage[left=3.5cm,top=2.5cm,right=2.5cm,bottom=2.5cm]{geometry} % konfiguracja marginesów
+% \usepackage{layout}
+\usepackage{natbib}
+\usepackage{hyperref}
+% \usepackage[numbers]{natbib} % powraca do standardowej metody cytowania
+\begin{document}
+% biblatex do cytowań w stopce \footcite{}
+\noindent To jest minimalny plik z cytatem \\
+pierwszym \cite{de1999philosophy} \\
+ cytowanie citep \citep{johnson1980mental} \\
+trzecim \cite{simon1980cognitive} \\
+i czwartym (citet) \citet{norman1980twelve}. \\
+W bibliografii pojawiają sie tylko te wpisy z bliku biblio, ktore zostaly uzyte w pracy.
+A tak się uzywa stopki\footnote{Przykładowa stopka}.
+\begin{tabbing}
+  $\backslash$citep[chap.~2]\{de1999philosophy\}dddd \qquad\= $\Rightarrow$ \qquad\= \citep[chap.~2]{de1999philosophy} \kill
+  \verb!\citet{nazwa}! \> $\Longrightarrow$ \> \citet{de1999philosophy} \\
+  \verb!\citet[chap.~2]{de1999philosophy}! \> $\Longrightarrow$ \> \citet[rodzdział.~2]{de1999philosophy} \\
+  \verb!\citep{nazwa}! \> $\Longrightarrow$ \>  \citep{de1999philosophy} \\
+  \verb!\citep[chap.~2]{de1999philosophy}! \> $\Longrightarrow$ \> \citep[chap.~2]{de1999philosophy} \\
+  \verb!\citep[see][]{nazwa}! \> $\Longrightarrow$ \> \citep[zobacz][]{de1999philosophy} \\
+  \verb!\citet*{nazwa}! \> $\Longrightarrow$ \> \citet*{de1999philosophy} \\
+  \verb!\citep*{nazwa}! \> $\Longrightarrow$ \> \citep*{de1999philosophy} \\
+\end{tabbing}
+% more styles at https://www.overleaf.com/learn/latex/Bibtex%20bibliography%20styles#Biblatex_styles
+\bibliographystyle{apalike}
+\bibliography{biblio}
+
+\end{document}
